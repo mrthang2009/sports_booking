@@ -23,6 +23,8 @@ Tạo file `.env` dựa trên mẫu `.env.example`:
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.ehrsxvd.mongodb.net/<dbname>
 PORT=5000
 ```
+- **MONGO_URI**: Thay `<username>`, `<password>`, `<dbname>` bằng thông tin tài khoản và tên database của bạn trên MongoDB Atlas hoặc local.
+- **PORT**: Cổng server sẽ chạy (mặc định 5000).
 
 ## Seed dữ liệu mẫu
 ```bash
@@ -36,6 +38,20 @@ node src/seed.js
 yarn node server.js
 # hoặc
 node server.js
+```
+
+### Tự động reload server khi sửa code (hot reload)
+Cài đặt `nodemon` nếu chưa có:
+```bash
+yarn add nodemon --dev
+# hoặc
+npm install nodemon --save-dev
+```
+Chạy server với nodemon:
+```bash
+yarn nodemon server.js
+# hoặc
+npx nodemon server.js
 ```
 
 ## API Docs
